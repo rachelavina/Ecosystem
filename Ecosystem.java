@@ -20,25 +20,14 @@ import java.util.TimerTask;
 public class Ecosystem extends JPanel {
 
     private Timer timer;
-    private double ecoSize;
-    private double temperature;
-    private double numSunlight;
     private ArrayList<Bacteria> bacterias;
     private ArrayList<Virus> viruses;
     private ArrayList<Plant> plants;
-    private boolean animalEncounter;
-    private ArrayList<Integer> fights;
     private ArrayList<Grasshopper> grasshoppers;
     private ArrayList<Rat> rats;
     private ArrayList<Frog> frogs;
     private ArrayList<Snake> snakes;
     private ArrayList<Eagle> eagles;
-    private int ticks;
-    private boolean gOverload;
-    private boolean rOverload;
-    private boolean fOverload;
-    private boolean sOverload;
-    private boolean eOverload;
         
     public Ecosystem() {
         super();
@@ -105,29 +94,21 @@ public class Ecosystem extends JPanel {
         super.paintComponent(g);
         
         for(Grasshopper grasshopper : grasshoppers) {
-            grasshopper.draw(g);
-            
+            grasshopper.draw(g);   
         }
         
         for(Rat rat : rats)   {
-            //rat.spawn();
             rat.draw(g);
-            
         }
         
         for(Frog frog : frogs)   {
-            //frog.spawn();
-            frog.draw(g);
-            
-            
+            frog.draw(g);  
         }
         
         for(Snake snake : snakes)   {
-            //snake.spawn();
-            snake.draw(g);
-            
-            
+            snake.draw(g);           
         }
+        
         for(Eagle eagle : eagles)   {
             eagle.draw(g);
         }
@@ -160,22 +141,18 @@ public class Ecosystem extends JPanel {
                 g.update();
             }
             for (Rat r : rats)   {
-                //dieOff(r, rats.size(), rats);
                 r.wallCollisions();
                 r.update();
             }
             for (Frog f : frogs)  {
-                //dieOff(f, frogs.size(), frogs);
                 f.wallCollisions();
                 f.update();
             }
             for (Snake s : snakes)  {
-                //dieOff(s, snakes.size(), snakes);
                 s.wallCollisions();
                 s.update();
             }
             for (Eagle e : eagles)  {
-                //dieOff(e, eagles.size(), eagles);
                 e.wallCollisions();
                 e.update();
             }
@@ -364,34 +341,28 @@ public class Ecosystem extends JPanel {
                 }
             }
            
-           
-            
             
             for (Grasshopper g : grasshoppers) {
                 for (Plant p : plants) {
                     eatPlant(p, g);
-                    
                 }
             }
             
             for (Rat r : rats) {
                 for (Plant p : plants) {
                     eatPlant(p, r);
-                    
                 }
             }
             
             for (Frog f : frogs) {
                 for (Plant p : plants) {
                     eatPlant(p, f);
-                    
                 }
             }
             
             for (Snake s : snakes) {
                 for (Plant p : plants) {
                     eatPlant(p, s);
-                    
                 }
             }
             
@@ -399,7 +370,6 @@ public class Ecosystem extends JPanel {
             for (Eagle e : eagles) {
                 for (Plant p : plants) {
                     eatPlant(p, e);
-                    
                 }
             }
             
@@ -430,7 +400,6 @@ public class Ecosystem extends JPanel {
      
     private void animalBounce(Animal a1, Animal a2) {
         if(a1.getX() + 50 > a2.getX() && a1.getX() < a2.getX() + 50 && a1.getY() + 50 > a2.getY() && a1.getY() < a2.getY() + 50)    {
-            //a1.eaten();
             
             /*
             makes the characters bounce off of one another
@@ -528,38 +497,6 @@ public class Ecosystem extends JPanel {
                     
                     }
                 }
-            }
-        }
-        
-        
-        private void gDie(Grasshopper g) {
-            if (g.getPopulation() < grasshoppers.size())    {
-                gOverload = true;
-                
-            }
-        }
-        private void rDie(Rat r) {
-            if (r.getPopulation() < rats.size())    {
-                rOverload = true;
-                
-            }
-        }
-        private void fDie(Frog f) {
-            if (f.getPopulation() < frogs.size())    {
-                fOverload = true;
-                
-            }
-        }
-        private void sDie(Snake s) {
-            if (s.getPopulation() < snakes.size())    {
-                sOverload = true;
-                
-            }
-        }
-        private void eDie(Eagle e) {
-            if (e.getPopulation() < grasshoppers.size())    {
-                eOverload = true;
-                
             }
         }
         
