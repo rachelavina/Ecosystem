@@ -79,11 +79,14 @@ public class Ecosystem extends JPanel {
             }
         }
         
-        System.out.println("Grasshoppers, rats, frogs, snakes, and eagles all live in one ecosystem.");
-        System.out.println("Animals only eat the animal below them, otherwise they bounce off of other animals.");
-        System.out.println("A virus or bacteria kills an animal, but only a virus dies with its host.");
-        System.out.println("Species can reproduce, but if they go over the carrying capacity, then natural selection causes some to die.");
-        System.out.println("Plants grow in the beginning, but are only eaten if they taste good.");
+        /*
+        Grasshoppers, rats, frogs, snakes, and eagles all live in one ecosystem.
+        Animals only eat the animal below them, otherwise they bounce off of other animals.
+        A virus or bacteria kills an animal, but only a virus dies with its host.
+        Species can reproduce, but if they go over the carrying capacity, then natural selection causes some to die.
+        Plants grow in the beginning, but are only eaten if they taste good.
+        */
+        
     }
     
     
